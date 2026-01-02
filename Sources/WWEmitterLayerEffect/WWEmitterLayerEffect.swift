@@ -57,7 +57,7 @@ public extension WWEmitterLayerEffect {
     }
 }
 
-// MARK: - 小工具
+// MARK: - 雪花Cell產生器
 private extension WWEmitterLayerEffect {
     
     /// [雪花Cell產生器](https://medium.com/@satindersingh71/smooth-core-animation-snow-effect-3d93417b96b3)
@@ -80,7 +80,7 @@ private extension WWEmitterLayerEffect {
     }
 }
 
-// MARK: - CAEmitterCell (private static function)
+// MARK: - 煙火Cell產生器
 private extension WWEmitterLayerEffect {
 
     /// [煙火Cell產生器](https://medium.com/@peteliev/what-do-you-know-about-caemitterlayer-368378d45c2e)
