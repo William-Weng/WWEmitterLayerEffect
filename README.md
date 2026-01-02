@@ -12,10 +12,14 @@ dependencies: [
 ]
 ```
 
+https://github.com/user-attachments/assets/717a734c-1cda-42c7-8f07-26e6bd8d6a4f
+
+https://github.com/user-attachments/assets/64534bb9-afc0-4b99-998e-7e1a89b29a95
+
 ### 可用函式 (Function)
 |函式|功能|
 |-|-|
-|maker(with:on:image:birthRate:lifetime:color:renderMode:)||
+|maker(with:on:image:birthRate:lifetime:color:renderMode:)|產生Emitter效果|
 
 ### Example
 ```swift

@@ -1,0 +1,15 @@
+{
+  "originHash" : "828de9e3875f903b7f27b3f0e29fc81c1301d9cba030ccee507caa70ec31bc94",
+  "pins" : [
+    {
+      "identity" : "wwemitterlayereffect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWEmitterLayerEffect",
+      "state" : {
+        "revision" : "31b619f0b48d8533dc11c13d689acd0e52df1619",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
