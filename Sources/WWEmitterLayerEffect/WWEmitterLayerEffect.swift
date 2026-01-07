@@ -24,9 +24,10 @@ public extension WWEmitterLayerEffect {
     ///   - birthRate: 產生數量
     ///   - lifetime: 存活時間
     ///   - color: 顏色
+    ///   - colorRange: 顏色變動的範圍
     ///   - renderMode: CAEmitterLayerRenderMode
     /// - Returns: CAEmitterLayer
-    func maker(with effectType: EffectType, on view: UIView, image: UIImage, birthRate: Float, lifetime: Float, color: UIColor? = nil, renderMode: CAEmitterLayerRenderMode? = nil) -> CAEmitterLayer {
+    func maker(with effectType: EffectType, on view: UIView, image: UIImage, birthRate: Float, lifetime: Float, color: UIColor? = nil, colorRange: ColorRange? = nil, renderMode: CAEmitterLayerRenderMode? = nil) -> CAEmitterLayer {
         
         switch effectType {
         case .snowFlake:
@@ -36,7 +37,7 @@ public extension WWEmitterLayerEffect {
                         ._renderMode(renderMode)
                         ._timeOffset(offset: 10)
             
-            let snowFlakeCell = snowFlakeCell(image: image, birthRate: birthRate, lifetime: lifetime, color: color)
+            let snowFlakeCell = snowFlakeCell(image: image, birthRate: birthRate, lifetime: lifetime, color: color, colorRange: colorRange)
             
             layer.emitterCells = [snowFlakeCell]
             
@@ -48,7 +49,7 @@ public extension WWEmitterLayerEffect {
                         ._setting(position: CGPoint(x: view.bounds.width / 2, y: view.bounds.height), size: view.bounds.size)
                         ._renderMode(renderMode)
             
-            let fireworkCell = fireworkCell(image: image, birthRate: birthRate, subBirthRate: subBirthRate, lifetime: lifetime, color: color)
+            let fireworkCell = fireworkCell(image: image, birthRate: birthRate, subBirthRate: subBirthRate, lifetime: lifetime, color: color, colorRange: colorRange)
             
             layer.emitterCells = [fireworkCell]
             
@@ -66,8 +67,11 @@ private extension WWEmitterLayerEffect {
     ///   - birthRate: 產生數量
     ///   - lifetime: 存活時間
     ///   - color: 顏色
+    ///   - colorRange: 顏色變動的範圍
     /// - Returns: CAEmitterCell
-    func snowFlakeCell(image: UIImage, birthRate: Float, lifetime: Float, color: UIColor?) -> CAEmitterCell {
+    func snowFlakeCell(image: UIImage, birthRate: Float, lifetime: Float, color: UIColor?, colorRange: ColorRange?) -> CAEmitterCell {
+        
+        let colorRange = colorRange ?? (0, 0, 0)
         
         let cell = CAEmitterCell()._setting(image: image, birthRate: birthRate, lifetime: lifetime)
                                   ._scale(1.0, range: 0.3, speed: -0.02)
@@ -75,7 +79,7 @@ private extension WWEmitterLayerEffect {
                                   ._velocity(-30, range: -20)
                                   ._emission(range: .pi, latitude: .pi, longitude: .pi)
                                   ._spin(-0.5, range: 1.0)
-                                  ._color(color, redRange: 0, greenRange: 0, blueRange: 0)
+                                  ._color(color, redRange: colorRange.red, greenRange: colorRange.green, blueRange: colorRange.blue)
         return cell
     }
 }
@@ -89,11 +93,12 @@ private extension WWEmitterLayerEffect {
     ///   - birthRate: 射出產生數量
     ///   - subBirthRate: 爆開產生數量
     ///   - lifetime: 存活時間
-    ///   - color: color description
+    ///   - color: 顏色
+    ///   - colorRange: 顏色變動的範圍
     /// - Returns: CAEmitterCell
-    func fireworkCell(image: UIImage, birthRate: Float, subBirthRate: Float, lifetime: Float, color: UIColor?) -> CAEmitterCell {
+    func fireworkCell(image: UIImage, birthRate: Float, subBirthRate: Float, lifetime: Float, color: UIColor?, colorRange: ColorRange?) -> CAEmitterCell {
         
-        let emitterCell = fireworkEmitterCell(birthRate: birthRate, lifetime: lifetime, color: color)
+        let emitterCell = fireworkEmitterCell(birthRate: birthRate, lifetime: lifetime, color: color, colorRange: colorRange)
         let trailCell = fireworkTrailCell(image: image)
         let fireworkCell = fireworkMainCell(image: image, birthRate: subBirthRate)
         
@@ -107,11 +112,14 @@ private extension WWEmitterLayerEffect {
     ///   - birthRate: 產生數量
     ///   - lifetime: 存活時間
     ///   - color: 顏色
+    ///   - colorRange: 顏色變動的範圍
     /// - Returns: CAEmitterCell
-    func fireworkEmitterCell(birthRate: Float, lifetime: Float, color: UIColor?) -> CAEmitterCell {
+    func fireworkEmitterCell(birthRate: Float, lifetime: Float, color: UIColor?, colorRange: ColorRange?) -> CAEmitterCell {
+        
+        let colorRange = colorRange ?? (0.9, 0.9, 0.9)
         
         let cell = CAEmitterCell()._setting(birthRate: birthRate, lifetime: lifetime)
-                                  ._color(color, redRange: 0.9, greenRange: 0.9, blueRange: 0.9)
+                                  ._color(color, redRange: colorRange.red, greenRange: colorRange.green, blueRange: colorRange.blue)
                                   ._velocity(-300, range: -100)
                                   ._acceleration(x: 0, y: -100)
                                   ._emission(range: CGFloat.pi / 4, latitude: 0, longitude: CGFloat.pi / 2)

@@ -8,7 +8,7 @@
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```bash
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWEmitterLayerEffect.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWEmitterLayerEffect.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```
 
@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/64534bb9-afc0-4b99-998e-7e1a89b29a95
 ### 可用函式 (Function)
 |函式|功能|
 |-|-|
-|maker(with:on:image:birthRate:lifetime:color:renderMode:)|產生Emitter效果|
+|maker(with:on:image:birthRate:lifetime:color:colorRange:renderMode:)|產生Emitter效果|
 
 ### Example
 ```swift

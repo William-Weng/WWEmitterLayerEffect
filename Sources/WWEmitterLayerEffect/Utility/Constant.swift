@@ -7,6 +7,14 @@
 
 import UIKit
 
+// MARK: - typealias
+public extension WWEmitterLayerEffect {
+    
+    /// 顏色變動的範圍
+    typealias ColorRange = (red: Float, green: Float, blue: Float)
+}
+
+// MARK: - enum
 public extension WWEmitterLayerEffect {
     
     /// Emitter效果

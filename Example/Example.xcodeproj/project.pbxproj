@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8191B5982F079F7B00D8B8FF /* WWEmitterLayerEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 8191B5972F079F7B00D8B8FF /* WWEmitterLayerEffect */; };
+		81B062B52F0E04650070EC3A /* WWEmitterLayerEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 81B062B42F0E04650070EC3A /* WWEmitterLayerEffect */; };
+		81B062B82F0E08FA0070EC3A /* WWEmitterLayerEffect in Frameworks */ = {isa = PBXBuildFile; productRef = 81B062B72F0E08FA0070EC3A /* WWEmitterLayerEffect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B062B82F0E08FA0070EC3A /* WWEmitterLayerEffect in Frameworks */,
+				81B062B52F0E04650070EC3A /* WWEmitterLayerEffect in Frameworks */,
 				8191B5982F079F7B00D8B8FF /* WWEmitterLayerEffect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +88,8 @@
 			name = Example;
 			packageProductDependencies = (
 				8191B5972F079F7B00D8B8FF /* WWEmitterLayerEffect */,
+				81B062B42F0E04650070EC3A /* WWEmitterLayerEffect */,
+				81B062B72F0E08FA0070EC3A /* WWEmitterLayerEffect */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -114,7 +120,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				81D33A412F07B1FC00077F78 /* XCRemoteSwiftPackageReference "WWEmitterLayerEffect" */,
+				81B062B62F0E08FA0070EC3A /* XCRemoteSwiftPackageReference "WWEmitterLayerEffect" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -358,12 +364,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81D33A412F07B1FC00077F78 /* XCRemoteSwiftPackageReference "WWEmitterLayerEffect" */ = {
+		81B062B62F0E08FA0070EC3A /* XCRemoteSwiftPackageReference "WWEmitterLayerEffect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWEmitterLayerEffect";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -371,6 +377,15 @@
 /* Begin XCSwiftPackageProductDependency section */
 		8191B5972F079F7B00D8B8FF /* WWEmitterLayerEffect */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WWEmitterLayerEffect;
+		};
+		81B062B42F0E04650070EC3A /* WWEmitterLayerEffect */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WWEmitterLayerEffect;
+		};
+		81B062B72F0E08FA0070EC3A /* WWEmitterLayerEffect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81B062B62F0E08FA0070EC3A /* XCRemoteSwiftPackageReference "WWEmitterLayerEffect" */;
 			productName = WWEmitterLayerEffect;
 		};
 /* End XCSwiftPackageProductDependency section */
